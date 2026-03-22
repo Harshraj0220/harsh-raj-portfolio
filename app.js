@@ -52,6 +52,15 @@ const PROJECTS = [
   }
 ];
 
+const TRAININGS = [
+  {
+    title: 'CPP with Object Oriented Programming',
+    company: 'CipherSchools',
+    date: "Jun' 25 – Jul' 25",
+    description: 'Data Science using CPP: Conducted exploratory data analysis and feature engineering with Pandas and NumPy, significantly reducing data preprocessing time. Developed and evaluated multiple Machine Learning models—including Linear Regression, KNN, SVM, Decision Trees, and K-Means via Scikit-learn—achieving a 15% average accuracy improvement.'
+  }
+];
+
 const TIMELINE = [
   { type: 'Education', title: 'Bachelor of Technology - CSE (CGPA: 7.45)', org: 'Lovely Professional University, Phagwara', date: 'Aug’ 23 – Present' },
   { type: 'Training', title: 'CPP with OOPs Summer Training', org: 'CipherSchools', date: "Jun' 25 – Jul' 25" },
@@ -150,7 +159,7 @@ function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrolled = scrollY > 60;
 
-  const links = ['About', 'Projects', 'Timeline', 'Certificates', 'Contact'];
+  const links = ['About', 'Projects', 'Training', 'Timeline', 'Certificates', 'Contact'];
 
   return e(React.Fragment, null,
     e('nav', { className: `navbar ${scrolled ? 'scrolled' : ''}` },
@@ -548,6 +557,46 @@ function ProjectsSection() {
 }
 
 // ════════════════════════════════════════════════
+// TRAINING
+// ════════════════════════════════════════════════
+
+function TrainingSection() {
+  return e(motion.section, {
+    id: 'training',
+    className: 'section training',
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true, margin: '-80px' },
+    variants: stagger,
+  },
+    e('div', { className: 'container' },
+      m('div', { variants: fadeUp, className: 'section-title' },
+        e('span', { className: 'num' }, '03'),
+        'TRAINING',
+      ),
+      ...TRAININGS.map((train, idx) =>
+        m('div', {
+          key: idx,
+          variants: fadeUp,
+          className: 'project-card',
+          style: { gridTemplateColumns: '80px 1fr', alignItems: 'center' }
+        },
+          e('div', { className: 'project-num' }, String(idx + 1).padStart(2, '0')),
+          e('div', null,
+            e('div', { style: { display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' } },
+              e('h3', { className: 'project-title', style: { margin: 0 } }, train.title),
+              e('span', { style: { color: 'var(--grey)', fontSize: '0.9rem', fontFamily: 'var(--font-body)', fontWeight: 'bold' } }, train.date)
+            ),
+            e('div', { style: { color: 'var(--gold)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '16px', textTransform: 'uppercase' } }, train.company),
+            e('p', { className: 'project-desc', style: { margin: 0 } }, train.description)
+          )
+        )
+      )
+    )
+  );
+}
+
+// ════════════════════════════════════════════════
 // TIMELINE
 // ════════════════════════════════════════════════
 
@@ -562,7 +611,7 @@ function TimelineSection() {
   },
     e('div', { className: 'container' },
       m('div', { variants: fadeUp, className: 'section-title', style: { marginBottom: '8px' } },
-        e('span', { className: 'num' }, '03'),
+        e('span', { className: 'num' }, '04'),
         'THE RECORD',
       ),
       m('p', { variants: fadeUp, className: 'section-subtitle', style: { marginBottom: '48px', color: 'var(--grey)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' } },
@@ -606,7 +655,7 @@ function CertificatesSection() {
   },
     e('div', { className: 'container' },
       m('div', { variants: fadeUp, className: 'section-title' },
-        e('span', { className: 'num' }, '04'),
+        e('span', { className: 'num' }, '05'),
         'CERTIFICATES',
       ),
       e('div', { className: 'cert-grid' },
@@ -751,7 +800,7 @@ function ContactSection() {
   },
     e('div', { className: 'container' },
       m('div', { variants: fadeUp, className: 'section-title' },
-        e('span', { className: 'num' }, '05'),
+        e('span', { className: 'num' }, '06'),
         'GET IN TOUCH',
       ),
       m('div', { variants: fadeUp, className: 'contact-grid' },
@@ -829,8 +878,10 @@ function App() {
       e(Marquee, { reverse: true, dark: true }),
       e(ProjectsSection),
       e(Marquee, { reverse: false }),
-      e(TimelineSection),
+      e(TrainingSection),
       e(Marquee, { reverse: true, dark: true }),
+      e(TimelineSection),
+      e(Marquee, { reverse: false }),
       e(CertificatesSection),
       e(ContactSection),
     ),
