@@ -588,8 +588,7 @@ function TrainingSection() {
         m('div', {
           key: idx,
           variants: fadeUp,
-          className: 'project-card',
-          style: { gridTemplateColumns: '80px 1fr auto', alignItems: 'center' }
+          className: 'project-card'
         },
           e('div', { className: 'project-num' }, String(idx + 1).padStart(2, '0')),
           e('div', null,
