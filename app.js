@@ -31,7 +31,7 @@ const PROJECTS = [
     description: 'Developed a real-time system monitoring web application displaying CPU and memory utilization metrics with dynamic graphs and an auto-refreshing process table supporting search and filtering.',
     tech: ['Python', 'psutil', 'Flask', 'JavaScript', 'Chart.js', 'System Monitoring'],
     github: 'https://github.com/Harshraj0220/Real-time-Process-Monitoring-Dashboard',
-    image: 'projects/Real time process monitoring dashboard/Pic 1.jpg'
+    image: 'Projects/Real time process monitoring dashboard/Pic 1.jpg'
   },
   {
     title: 'Wind Tunnel Data Visualizer',
@@ -40,7 +40,7 @@ const PROJECTS = [
     tech: ['Aerodynamics', 'Flow Visualization', 'Prototyping'],
     github: '',
     googleDrive: 'https://drive.google.com/drive/folders/1-pxN-AjQioYBVGGYgV112p6KNnKWhwI6?usp=drive_link',
-    video: 'projects/Wind tunnel data visualizer/WhatsApp Video 2026-03-22 at 10.31.34 PM.mp4'
+    video: 'Projects/Wind tunnel data visualizer/WhatsApp Video 2026-03-22 at 10.31.34 PM.mp4'
   },
   {
     title: 'AI Creative Writing Coach',
@@ -48,7 +48,7 @@ const PROJECTS = [
     description: 'Developed an AI-powered writing assistant using NLP to generate writing prompts, deliver contextual feedback, improve story structure, and enhance user creativity through an interactive chat interface.',
     tech: ['Python', 'Flask', 'NLP/LLMs', 'JavaScript', 'REST APIs'],
     github: 'https://github.com/Harshraj0220/Ai-Creative-Writing-Coach',
-    image: 'projects/AI creative writing coach/Screenshot 2026-03-22 221456.png'
+    image: 'Projects/AI creative writing coach/Screenshot 2026-03-22 221456.png'
   }
 ];
 
@@ -290,7 +290,7 @@ function Hero() {
             e('h3', { style: { fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--white)', textTransform: 'uppercase' } }, 'RESUME'),
             e('div', { style: { display: 'flex', gap: '16px', alignItems: 'center' } },
               e('a', {
-                href: 'resume/Harsh Raj_resume.jpg', 
+                href: 'Resume/Harsh Raj_resume.jpg', 
                 download: 'Harsh_Raj_Resume.jpg',
                 style: {
                   background: 'var(--gold)', color: 'var(--dark)', padding: '6px 12px',
@@ -315,7 +315,7 @@ function Hero() {
             } 
           },
             e('img', {
-              src: 'resume/Harsh Raj_resume.jpg',
+              src: 'Resume/Harsh Raj_resume.jpg',
               alt: 'Harsh Raj Resume',
               style: { 
                 maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px'
