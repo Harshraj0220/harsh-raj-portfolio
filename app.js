@@ -26,12 +26,12 @@ const SKILLS = {
 
 const PROJECTS = [
   {
-    title: 'Real-time Process Monitoring Dashboard',
-    date: "Apr' 24",
-    description: 'Developed a real-time system monitoring web application displaying CPU and memory utilization metrics with dynamic graphs and an auto-refreshing process table supporting search and filtering.',
-    tech: ['Python', 'psutil', 'Flask', 'JavaScript', 'Chart.js', 'System Monitoring'],
-    github: 'https://github.com/Harshraj0220/Real-time-Process-Monitoring-Dashboard',
-    image: 'Projects/Real time process monitoring dashboard/Pic 1.jpg'
+    title: 'AI Creative Writing Coach',
+    date: "Apr' 25",
+    description: 'Developed an AI-powered writing assistant using NLP to generate writing prompts, deliver contextual feedback, improve story structure, and enhance user creativity through an interactive chat interface.',
+    tech: ['Python', 'Flask', 'NLP/LLMs', 'JavaScript', 'REST APIs'],
+    github: 'https://github.com/Harshraj0220/Ai-Creative-Writing-Coach',
+    image: 'Projects/AI creative writing coach/Screenshot 2026-03-22 221456.png'
   },
   {
     title: 'Wind Tunnel Data Visualizer',
@@ -43,12 +43,12 @@ const PROJECTS = [
     video: 'Projects/Wind tunnel data visualizer/WhatsApp Video 2026-03-22 at 10.31.34 PM.mp4'
   },
   {
-    title: 'AI Creative Writing Coach',
-    date: "Apr' 25",
-    description: 'Developed an AI-powered writing assistant using NLP to generate writing prompts, deliver contextual feedback, improve story structure, and enhance user creativity through an interactive chat interface.',
-    tech: ['Python', 'Flask', 'NLP/LLMs', 'JavaScript', 'REST APIs'],
-    github: 'https://github.com/Harshraj0220/Ai-Creative-Writing-Coach',
-    image: 'Projects/AI creative writing coach/Screenshot 2026-03-22 221456.png'
+    title: 'Real-time Process Monitoring Dashboard',
+    date: "Apr' 24",
+    description: 'Developed a real-time system monitoring web application displaying CPU and memory utilization metrics with dynamic graphs and an auto-refreshing process table supporting search and filtering.',
+    tech: ['Python', 'psutil', 'Flask', 'JavaScript', 'Chart.js', 'System Monitoring'],
+    github: 'https://github.com/Harshraj0220/Real-time-Process-Monitoring-Dashboard',
+    image: 'Projects/Real time process monitoring dashboard/Pic 1.jpg'
   }
 ];
 
@@ -208,58 +208,58 @@ function Hero() {
       animate: 'visible',
       variants: stagger,
     },
-    e('div', { className: 'container w-full' },
-      e('div', { className: 'hero-grid' },
-        e('div', { style: { display: 'flex', flexDirection: 'column', justifyContent: 'center' } },
-          m('div', { variants: fadeUp },
-            e('h1', { className: 'hero-slogan' }, 'HARSH RAJ')
-          ),
-          m('div', { variants: fadeUp },
-            e('p', { className: 'hero-sub' }, 'DATA ENGINEER')
-          ),
-          m('div', { variants: fadeUp, className: 'hero-socials', style: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' } },
-            e('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '12px' } },
-              ...SOCIAL_LINKS.map(link =>
-                e('a', {
-                  key: link.name,
-                  href: link.url,
-                  target: '_blank',
-                  rel: 'noopener noreferrer',
-                  className: 'social-btn',
-                  title: link.name,
-                }, e(SvgIcon, { path: link.icon, size: 18 })),
-              )
+      e('div', { className: 'container w-full' },
+        e('div', { className: 'hero-grid' },
+          e('div', { style: { display: 'flex', flexDirection: 'column', justifyContent: 'center' } },
+            m('div', { variants: fadeUp },
+              e('h1', { className: 'hero-slogan' }, 'HARSH RAJ')
             ),
-            e('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' } },
-              e('a', { href: '#contact', className: 'work-btn' }, 'Work with me'),
-              e('div', { className: 'download-wrapper' },
-                e('button', { 
-                  onClick: (e) => { e.preventDefault(); setShowResumeModal(true); },
-                  className: 'download-btn', 
-                  'aria-label': 'View Resume' 
-                },
-                  e(DownloadIcon, null),
-                  e('span', { className: 'download-text' }, 'RESUME')
+            m('div', { variants: fadeUp },
+              e('p', { className: 'hero-sub' }, 'DATA ENGINEER')
+            ),
+            m('div', { variants: fadeUp, className: 'hero-socials', style: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' } },
+              e('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '12px' } },
+                ...SOCIAL_LINKS.map(link =>
+                  e('a', {
+                    key: link.name,
+                    href: link.url,
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    className: 'social-btn',
+                    title: link.name,
+                  }, e(SvgIcon, { path: link.icon, size: 18 })),
+                )
+              ),
+              e('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' } },
+                e('a', { href: '#contact', className: 'work-btn' }, 'Work with me'),
+                e('div', { className: 'download-wrapper' },
+                  e('button', {
+                    onClick: (e) => { e.preventDefault(); setShowResumeModal(true); },
+                    className: 'download-btn',
+                    'aria-label': 'View Resume'
+                  },
+                    e(DownloadIcon, null),
+                    e('span', { className: 'download-text' }, 'RESUME')
+                  )
                 )
               )
+            ),
+          ),
+          m('div', { variants: fadeUp, className: 'hero-right' },
+            e('div', { className: 'floating-icon icon-1' }, '☁️'),
+            e('div', { className: 'floating-icon icon-2' }, '📊'),
+            e('div', { className: 'floating-icon icon-3' }, '🐍'),
+            e('div', { className: 'floating-icon icon-4' }, '⚙️'),
+            e('div', { className: 'info-card' },
+              e('p', { className: 'info-card-text' },
+                '3rd-year ',
+                e('span', { className: 'highlight' }, 'B.Tech CSE (Data Science)'),
+                ' student — building scalable, insight-driven products at the intersection of data engineering and fintech.'
+              )
             )
           ),
         ),
-        m('div', { variants: fadeUp, className: 'hero-right' },
-          e('div', { className: 'floating-icon icon-1' }, '☁️'),
-          e('div', { className: 'floating-icon icon-2' }, '📊'),
-          e('div', { className: 'floating-icon icon-3' }, '🐍'),
-          e('div', { className: 'floating-icon icon-4' }, '⚙️'),
-          e('div', { className: 'info-card' },
-            e('p', { className: 'info-card-text' },
-              '3rd-year ',
-              e('span', { className: 'highlight' }, 'B.Tech CSE (Data Science)'),
-              ' student — building scalable, insight-driven products at the intersection of data engineering and fintech.'
-            )
-          )
-        ),
       ),
-    ),
     ),
     // Resume Peek Modal
     e(AnimatePresence, null,
@@ -278,7 +278,7 @@ function Hero() {
         e('button', {
           style: {
             position: 'absolute', top: '24px', right: '32px',
-            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem', 
+            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem',
             cursor: 'pointer', fontFamily: 'var(--font-display)', lineHeight: 1
           },
           onClick: () => setShowResumeModal(false)
@@ -290,7 +290,7 @@ function Hero() {
           exit: { scale: 0.95, opacity: 0, y: 20 },
           transition: { type: 'spring', damping: 25, stiffness: 300 },
           style: {
-            width: '100%', maxWidth: '800px', height: '90vh', 
+            width: '100%', maxWidth: '800px', height: '90vh',
             background: 'var(--dark-2)', border: '2px solid var(--gold)',
             boxShadow: '12px 12px 0 #000', display: 'flex', flexDirection: 'column'
           },
@@ -300,7 +300,7 @@ function Hero() {
             e('h3', { style: { fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--white)', textTransform: 'uppercase' } }, 'RESUME'),
             e('div', { style: { display: 'flex', gap: '16px', alignItems: 'center' } },
               e('a', {
-                href: 'Resume/Harsh Raj_resume.jpg', 
+                href: 'Resume/Harsh Raj_resume.jpg',
                 download: 'Harsh_Raj_Resume.jpg',
                 style: {
                   background: 'var(--gold)', color: 'var(--dark)', padding: '6px 12px',
@@ -310,7 +310,7 @@ function Hero() {
               }, 'DOWNLOAD ⬇'),
               e('button', {
                 style: {
-                  background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem', 
+                  background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem',
                   cursor: 'pointer', fontFamily: 'var(--font-body)', lineHeight: 1
                 },
                 onClick: () => setShowResumeModal(false),
@@ -318,16 +318,16 @@ function Hero() {
               }, 'ESC')
             )
           ),
-          e('div', { 
-            style: { 
-              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column', 
+          e('div', {
+            style: {
+              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column',
               alignItems: 'center', justifyContent: 'center', overflow: 'hidden'
-            } 
+            }
           },
             e('img', {
               src: 'Resume/Harsh Raj_resume.jpg',
               alt: 'Harsh Raj Resume',
-              style: { 
+              style: {
                 maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px'
               }
             })
@@ -454,35 +454,35 @@ function ProjectsSection() {
           e('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-end', justifyContent: 'center' } },
             e('button', {
               onClick: (e) => { e.preventDefault(); setSelectedProject(proj); },
-              style: { 
-                cursor: 'pointer', background: 'none', border: '2px solid var(--gold)', 
-                color: 'var(--gold)', padding: '8px 16px', textTransform: 'uppercase', 
-                fontWeight: 'bold', fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: '120px' 
+              style: {
+                cursor: 'pointer', background: 'none', border: '2px solid var(--gold)',
+                color: 'var(--gold)', padding: '8px 16px', textTransform: 'uppercase',
+                fontWeight: 'bold', fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: '120px'
               }
             }, 'PEEK 👁'),
             proj.github ? e('a', {
               href: proj.github, target: '_blank', rel: 'noopener noreferrer',
-              style: { 
-                display: 'inline-block', textAlign: 'center', background: 'var(--gold)', 
-                color: 'var(--dark)', border: '2px solid #000', padding: '8px 16px', 
-                textTransform: 'uppercase', textDecoration: 'none', fontWeight: 'bold', 
-                fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: '120px' 
+              style: {
+                display: 'inline-block', textAlign: 'center', background: 'var(--gold)',
+                color: 'var(--dark)', border: '2px solid #000', padding: '8px 16px',
+                textTransform: 'uppercase', textDecoration: 'none', fontWeight: 'bold',
+                fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: '120px'
               }
             }, 'GITHUB ↗') : null,
             proj.googleDrive ? e('a', {
               href: proj.googleDrive, target: '_blank', rel: 'noopener noreferrer',
-              style: { 
-                display: 'inline-block', textAlign: 'center', background: 'var(--gold)', 
-                color: 'var(--dark)', border: '2px solid #000', padding: '8px 16px', 
-                textTransform: 'uppercase', textDecoration: 'none', fontWeight: 'bold', 
-                fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: '120px' 
+              style: {
+                display: 'inline-block', textAlign: 'center', background: 'var(--gold)',
+                color: 'var(--dark)', border: '2px solid #000', padding: '8px 16px',
+                textTransform: 'uppercase', textDecoration: 'none', fontWeight: 'bold',
+                fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: '120px'
               }
             }, 'DRIVE ↗') : null
           ),
         ),
       ),
     ),
-    
+
     // Image Viewer Modal for Peak
     e(AnimatePresence, null,
       selectedProject && e(motion.div, {
@@ -500,7 +500,7 @@ function ProjectsSection() {
         e('button', {
           style: {
             position: 'absolute', top: '24px', right: '32px',
-            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem', 
+            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem',
             cursor: 'pointer', fontFamily: 'var(--font-display)', lineHeight: 1
           },
           onClick: () => setSelectedProject(null)
@@ -512,7 +512,7 @@ function ProjectsSection() {
           exit: { scale: 0.95, opacity: 0, y: 20 },
           transition: { type: 'spring', damping: 25, stiffness: 300 },
           style: {
-            width: '100%', maxWidth: '1000px', height: '85vh', 
+            width: '100%', maxWidth: '1000px', height: '85vh',
             background: 'var(--dark-2)', border: '2px solid #000',
             boxShadow: '12px 12px 0 var(--gold)', display: 'flex', flexDirection: 'column'
           },
@@ -522,31 +522,31 @@ function ProjectsSection() {
             e('h3', { style: { fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--white)', textTransform: 'uppercase' } }, selectedProject.title),
             e('button', {
               style: {
-                background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem', 
+                background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem',
                 cursor: 'pointer', fontFamily: 'var(--font-body)', lineHeight: 1
               },
               onClick: () => setSelectedProject(null),
               'aria-label': 'Close'
             }, 'ESC')
           ),
-          e('div', { 
-            style: { 
-              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column', 
+          e('div', {
+            style: {
+              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column',
               alignItems: 'center', justifyContent: 'center', overflow: 'hidden'
-            } 
+            }
           },
-            selectedProject.video ? 
+            selectedProject.video ?
               e('video', {
                 src: selectedProject.video,
                 controls: true,
                 autoPlay: true,
                 style: { maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px', outline: 'none' }
               })
-            : 
+              :
               e('img', {
                 src: selectedProject.image,
                 alt: selectedProject.title,
-                style: { 
+                style: {
                   maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px'
                 }
               })
@@ -570,50 +570,50 @@ function TrainingSection() {
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
-  return e(React.Fragment, null, 
+  return e(React.Fragment, null,
     e(motion.section, {
       id: 'training',
       className: 'section training',
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true, margin: '-80px' },
-    variants: stagger,
-  },
-    e('div', { className: 'container' },
-      m('div', { variants: fadeUp, className: 'section-title' },
-        e('span', { className: 'num' }, '03'),
-        'TRAINING',
-      ),
-      ...TRAININGS.map((train, idx) =>
-        m('div', {
-          key: idx,
-          variants: fadeUp,
-          className: 'project-card'
-        },
-          e('div', { className: 'project-num' }, String(idx + 1).padStart(2, '0')),
-          e('div', null,
-            e('div', { style: { display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' } },
-              e('h3', { className: 'project-title', style: { margin: 0 } }, train.title),
-              e('span', { style: { color: 'var(--grey)', fontSize: '0.9rem', fontFamily: 'var(--font-body)', fontWeight: 'bold' } }, train.date)
+      initial: 'hidden',
+      whileInView: 'visible',
+      viewport: { once: true, margin: '-80px' },
+      variants: stagger,
+    },
+      e('div', { className: 'container' },
+        m('div', { variants: fadeUp, className: 'section-title' },
+          e('span', { className: 'num' }, '03'),
+          'TRAINING',
+        ),
+        ...TRAININGS.map((train, idx) =>
+          m('div', {
+            key: idx,
+            variants: fadeUp,
+            className: 'project-card'
+          },
+            e('div', { className: 'project-num' }, String(idx + 1).padStart(2, '0')),
+            e('div', null,
+              e('div', { style: { display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' } },
+                e('h3', { className: 'project-title', style: { margin: 0 } }, train.title),
+                e('span', { style: { color: 'var(--grey)', fontSize: '0.9rem', fontFamily: 'var(--font-body)', fontWeight: 'bold' } }, train.date)
+              ),
+              e('div', { style: { color: 'var(--gold)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '16px', textTransform: 'uppercase' } }, train.company),
+              e('p', { className: 'project-desc', style: { margin: 0 } }, train.description)
             ),
-            e('div', { style: { color: 'var(--gold)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '16px', textTransform: 'uppercase' } }, train.company),
-            e('p', { className: 'project-desc', style: { margin: 0 } }, train.description)
-          ),
-          e('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-end', justifyContent: 'center' } },
-            train.certificate ? e('button', {
-              onClick: (e) => { e.preventDefault(); setSelectedTraining(train); },
-              style: { 
-                cursor: 'pointer', background: 'none', border: '2px solid var(--gold)', 
-                color: 'var(--gold)', padding: '8px 16px', textTransform: 'uppercase', 
-                fontWeight: 'bold', fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: 'auto' 
-              }
-            }, 'CERTIFICATE 👁') : null
+            e('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-end', justifyContent: 'center' } },
+              train.certificate ? e('button', {
+                onClick: (e) => { e.preventDefault(); setSelectedTraining(train); },
+                style: {
+                  cursor: 'pointer', background: 'none', border: '2px solid var(--gold)',
+                  color: 'var(--gold)', padding: '8px 16px', textTransform: 'uppercase',
+                  fontWeight: 'bold', fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: 'auto'
+                }
+              }, 'CERTIFICATE 👁') : null
+            )
           )
         )
-      )
+      ),
     ),
-    ),
-    
+
     // Certificate Peek Modal
     e(AnimatePresence, null,
       selectedTraining && e(motion.div, {
@@ -631,7 +631,7 @@ function TrainingSection() {
         e('button', {
           style: {
             position: 'absolute', top: '24px', right: '32px',
-            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem', 
+            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem',
             cursor: 'pointer', fontFamily: 'var(--font-display)', lineHeight: 1
           },
           onClick: () => setSelectedTraining(null)
@@ -643,7 +643,7 @@ function TrainingSection() {
           exit: { scale: 0.95, opacity: 0, y: 20 },
           transition: { type: 'spring', damping: 25, stiffness: 300 },
           style: {
-            width: '100%', maxWidth: '800px', height: '90vh', 
+            width: '100%', maxWidth: '800px', height: '90vh',
             background: 'var(--dark-2)', border: '2px solid var(--gold)',
             boxShadow: '12px 12px 0 #000', display: 'flex', flexDirection: 'column'
           },
@@ -653,7 +653,7 @@ function TrainingSection() {
             e('h3', { style: { fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--white)', textTransform: 'uppercase' } }, selectedTraining.title + ' Certificate'),
             e('div', { style: { display: 'flex', gap: '16px', alignItems: 'center' } },
               e('a', {
-                href: selectedTraining.certificate, 
+                href: selectedTraining.certificate,
                 download: selectedTraining.title + ' Certificate',
                 style: {
                   background: 'var(--gold)', color: 'var(--dark)', padding: '6px 12px',
@@ -663,7 +663,7 @@ function TrainingSection() {
               }, 'DOWNLOAD ⬇'),
               e('button', {
                 style: {
-                  background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem', 
+                  background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem',
                   cursor: 'pointer', fontFamily: 'var(--font-body)', lineHeight: 1
                 },
                 onClick: () => setSelectedTraining(null),
@@ -671,16 +671,16 @@ function TrainingSection() {
               }, 'ESC')
             )
           ),
-          e('div', { 
-            style: { 
-              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column', 
+          e('div', {
+            style: {
+              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column',
               alignItems: 'center', justifyContent: 'center', overflow: 'hidden'
-            } 
+            }
           },
             e('img', {
               src: selectedTraining.certificate,
               alt: selectedTraining.title + ' Certificate',
-              style: { 
+              style: {
                 maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px'
               }
             })
@@ -755,15 +755,15 @@ function CertificatesSection() {
       ),
       e('div', { className: 'cert-grid' },
         ...CERTIFICATIONS.map((cert, idx) =>
-          m('div', { 
-            key: idx, 
-            variants: fadeUp, 
+          m('div', {
+            key: idx,
+            variants: fadeUp,
             className: 'cert-card group',
             onClick: () => setSelectedCert(cert),
-            style: { cursor: 'pointer' } 
+            style: { cursor: 'pointer' }
           },
             e('div', { className: 'cert-bg-num' }, String(idx + 1).padStart(2, '0')),
-            e('div', { className: 'cert-title flex items-center justify-between' }, 
+            e('div', { className: 'cert-title flex items-center justify-between' },
               cert.title,
               e('span', { className: 'text-gold opacity-0 group-hover:opacity-100 transition-opacity' }, '↗')
             ),
@@ -773,7 +773,7 @@ function CertificatesSection() {
         ),
       ),
     ),
-    
+
     // PDF Viewer Modal
     e(AnimatePresence, null,
       selectedCert && e(motion.div, {
@@ -791,7 +791,7 @@ function CertificatesSection() {
         e('button', {
           style: {
             position: 'absolute', top: '24px', right: '32px',
-            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem', 
+            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem',
             cursor: 'pointer', fontFamily: 'var(--font-display)', lineHeight: 1
           },
           onClick: () => setSelectedCert(null)
@@ -803,7 +803,7 @@ function CertificatesSection() {
           exit: { scale: 0.95, opacity: 0, y: 20 },
           transition: { type: 'spring', damping: 25, stiffness: 300 },
           style: {
-            width: '100%', maxWidth: '1000px', height: '85vh', 
+            width: '100%', maxWidth: '1000px', height: '85vh',
             background: 'var(--dark-2)', border: '2px solid var(--gold)',
             boxShadow: '12px 12px 0 #000', display: 'flex', flexDirection: 'column'
           },
@@ -813,38 +813,38 @@ function CertificatesSection() {
             e('h3', { style: { fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--white)', textTransform: 'uppercase' } }, selectedCert.title),
             e('button', {
               style: {
-                background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem', 
+                background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem',
                 cursor: 'pointer', fontFamily: 'var(--font-body)', lineHeight: 1
               },
               onClick: () => setSelectedCert(null),
               'aria-label': 'Close'
             }, 'ESC')
           ),
-          e('div', { 
-            style: { 
-              flex: 1, 
-              padding: '24px', 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
+          e('div', {
+            style: {
+              flex: 1,
+              padding: '24px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'center',
               overflow: 'hidden'
-            } 
+            }
           },
             e('img', {
               src: selectedCert.file,
               alt: selectedCert.title,
-              style: { 
-                maxWidth: '100%', 
-                maxHeight: 'calc(100% - 60px)', 
+              style: {
+                maxWidth: '100%',
+                maxHeight: 'calc(100% - 60px)',
                 objectFit: 'contain',
                 borderRadius: '8px',
               }
             }),
-            e('a', { 
-              href: selectedCert.file, 
-              download: selectedCert.title + ' Certificate', 
-              style: { 
+            e('a', {
+              href: selectedCert.file,
+              download: selectedCert.title + ' Certificate',
+              style: {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
@@ -869,7 +869,7 @@ function CertificatesSection() {
                 e.currentTarget.style.transform = 'translate(0, 0)';
                 e.currentTarget.style.boxShadow = '2px 2px 0 #000';
               }
-            }, 
+            },
               e(DownloadIcon, null),
               'DOWNLOAD CERTIFICATE'
             )
@@ -922,9 +922,9 @@ function ContactSection() {
           ),
           e('div', { style: { marginTop: '24px', fontFamily: 'var(--font-body)', color: 'var(--grey)' } },
             'Contact me at: ',
-            e('a', { 
-              href: 'mailto:harshraj6020@gmail.com', 
-              style: { color: 'var(--gold)', fontWeight: 'bold', textDecoration: 'none' } 
+            e('a', {
+              href: 'mailto:harshraj6020@gmail.com',
+              style: { color: 'var(--gold)', fontWeight: 'bold', textDecoration: 'none' }
             }, 'harshraj6020@gmail.com')
           )
         ),
