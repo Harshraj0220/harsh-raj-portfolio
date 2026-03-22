@@ -57,7 +57,8 @@ const TRAININGS = [
     title: 'CPP with Object Oriented Programming',
     company: 'CipherSchools',
     date: "Jun' 25 – Jul' 25",
-    description: 'Data Science using CPP: Conducted exploratory data analysis and feature engineering with Pandas and NumPy, significantly reducing data preprocessing time. Developed and evaluated multiple Machine Learning models—including Linear Regression, KNN, SVM, Decision Trees, and K-Means via Scikit-learn—achieving a 15% average accuracy improvement.'
+    description: 'Data Science using CPP: Conducted exploratory data analysis and feature engineering with Pandas and NumPy, significantly reducing data preprocessing time. Developed and evaluated multiple Machine Learning models—including Linear Regression, KNN, SVM, Decision Trees, and K-Means via Scikit-learn—achieving a 15% average accuracy improvement.',
+    certificate: 'Certificates/Screenshot 2026-03-22 215240.png'
   }
 ];
 
@@ -561,9 +562,18 @@ function ProjectsSection() {
 // ════════════════════════════════════════════════
 
 function TrainingSection() {
-  return e(motion.section, {
-    id: 'training',
-    className: 'section training',
+  const [selectedTraining, setSelectedTraining] = useState(null);
+
+  useEffect(() => {
+    const handleEsc = (e) => { if (e.key === 'Escape') setSelectedTraining(null); };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
+
+  return e(React.Fragment, null, 
+    e(motion.section, {
+      id: 'training',
+      className: 'section training',
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true, margin: '-80px' },
@@ -579,7 +589,7 @@ function TrainingSection() {
           key: idx,
           variants: fadeUp,
           className: 'project-card',
-          style: { gridTemplateColumns: '80px 1fr', alignItems: 'center' }
+          style: { gridTemplateColumns: '80px 1fr auto', alignItems: 'center' }
         },
           e('div', { className: 'project-num' }, String(idx + 1).padStart(2, '0')),
           e('div', null,
@@ -589,6 +599,92 @@ function TrainingSection() {
             ),
             e('div', { style: { color: 'var(--gold)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '16px', textTransform: 'uppercase' } }, train.company),
             e('p', { className: 'project-desc', style: { margin: 0 } }, train.description)
+          ),
+          e('div', { style: { display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-end', justifyContent: 'center' } },
+            train.certificate ? e('button', {
+              onClick: (e) => { e.preventDefault(); setSelectedTraining(train); },
+              style: { 
+                cursor: 'pointer', background: 'none', border: '2px solid var(--gold)', 
+                color: 'var(--gold)', padding: '8px 16px', textTransform: 'uppercase', 
+                fontWeight: 'bold', fontSize: '0.8rem', fontFamily: 'var(--font-body)', width: 'auto' 
+              }
+            }, 'CERTIFICATE 👁') : null
+          )
+        )
+      )
+    ),
+    ),
+    
+    // Certificate Peek Modal
+    e(AnimatePresence, null,
+      selectedTraining && e(motion.div, {
+        key: 'training-modal-overlay',
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+        style: {
+          position: 'fixed', inset: 0, zIndex: 9999,
+          background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px'
+        },
+        onClick: () => setSelectedTraining(null)
+      },
+        e('button', {
+          style: {
+            position: 'absolute', top: '24px', right: '32px',
+            background: 'none', border: 'none', color: 'white', fontSize: '2.5rem', 
+            cursor: 'pointer', fontFamily: 'var(--font-display)', lineHeight: 1
+          },
+          onClick: () => setSelectedTraining(null)
+        }, '×'),
+        e(motion.div, {
+          key: 'training-modal-content',
+          initial: { scale: 0.95, opacity: 0, y: 20 },
+          animate: { scale: 1, opacity: 1, y: 0 },
+          exit: { scale: 0.95, opacity: 0, y: 20 },
+          transition: { type: 'spring', damping: 25, stiffness: 300 },
+          style: {
+            width: '100%', maxWidth: '800px', height: '90vh', 
+            background: 'var(--dark-2)', border: '2px solid var(--gold)',
+            boxShadow: '12px 12px 0 #000', display: 'flex', flexDirection: 'column'
+          },
+          onClick: (e) => e.stopPropagation()
+        },
+          e('div', { style: { padding: '16px 24px', borderBottom: '2px solid #333', display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+            e('h3', { style: { fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--white)', textTransform: 'uppercase' } }, selectedTraining.title + ' Certificate'),
+            e('div', { style: { display: 'flex', gap: '16px', alignItems: 'center' } },
+              e('a', {
+                href: selectedTraining.certificate, 
+                download: selectedTraining.title + ' Certificate',
+                style: {
+                  background: 'var(--gold)', color: 'var(--dark)', padding: '6px 12px',
+                  fontFamily: 'var(--font-body)', fontSize: '0.8rem', fontWeight: 'bold',
+                  textDecoration: 'none', border: '2px solid #000', boxShadow: '2px 2px 0 #000'
+                }
+              }, 'DOWNLOAD ⬇'),
+              e('button', {
+                style: {
+                  background: 'none', border: 'none', color: 'var(--grey)', fontSize: '1.5rem', 
+                  cursor: 'pointer', fontFamily: 'var(--font-body)', lineHeight: 1
+                },
+                onClick: () => setSelectedTraining(null),
+                'aria-label': 'Close'
+              }, 'ESC')
+            )
+          ),
+          e('div', { 
+            style: { 
+              flex: 1, padding: '24px', display: 'flex', flexDirection: 'column', 
+              alignItems: 'center', justifyContent: 'center', overflow: 'hidden'
+            } 
+          },
+            e('img', {
+              src: selectedTraining.certificate,
+              alt: selectedTraining.title + ' Certificate',
+              style: { 
+                maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px'
+              }
+            })
           )
         )
       )
